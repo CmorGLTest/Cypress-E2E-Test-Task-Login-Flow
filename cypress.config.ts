@@ -1,12 +1,45 @@
-const { defineConfig } = require("cypress");
+/**
+ * Cypress Configuration File
+ * Configures test environment, API endpoints, and test behavior
+ */
+import { defineConfig } from 'cypress'
 
-module.exports = defineConfig({
+export default defineConfig({
+  // Cypress project ID for cloud integration
   projectId: 'qthm8g',
-  allowCypressEnv: false,
 
+  /**
+   * E2E Test Configuration
+   * Settings for end-to-end testing
+   */
   e2e: {
-    setupNodeEvents(on, config) {
-      baseUrl: "https://demo.allianz-parken.de/parking/login"
-    },
+    // Base URL for all cy.visit() commands
+    baseUrl: 'https://demo.allianz-parken.de'
   },
-});
+
+  /**
+   * Environment Variables Configuration
+   * These can be loaded from system environment variables or .env files
+   * Format: CYPRESS_VARIABLE_NAME becomes accessible via cy.env('variable_name')
+   * 
+   * Security Note: While these variables can be accessed in tests,
+   * sensitive data should be managed through .env files not committed to version control
+   */
+  env: {
+    // Email for testing login functionality
+    email: process.env.CYPRESS_EMAIL || '',
+    
+    // Password for testing login functionality
+    password: process.env.CYPRESS_PASSWORD || '',
+    
+    // Email for testing registration functionality
+    registerEmail: process.env.CYPRESS_REGISTER_EMAIL || ''
+  },
+
+  /**
+   * Security configuration
+   * Allows Cypress to access environment variables from code
+   * Set to false for production environments
+   */
+  allowCypressEnv: true
+})
