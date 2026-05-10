@@ -1,3 +1,4 @@
+/// <reference types="cypress" />
 /**
  * Registration Page Test Suite
  * Tests the registration form including password validation requirements

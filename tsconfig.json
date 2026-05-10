@@ -2,9 +2,12 @@
   "compilerOptions": {
     "target": "ES2019",
     "lib": ["ES2019", "DOM"],
-    "types": ["cypress"],
+    "types": ["cypress", "node"],
     "strict": false,
-    "ignoreDeprecations": "6.0"
+    "ignoreDeprecations": "6.0",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
     "cypress/**/*.ts"

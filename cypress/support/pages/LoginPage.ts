@@ -41,9 +41,10 @@ class LoginPage {
   /**
    * Get the login submit button
    * Matches button containing "Log in" or "Einloggen" text for multi-language support
+   * Gets the button element that contains the login text
    */
   loginButton() {
-    return cy.get('button').contains(/Log in|Einloggen/)
+    return cy.contains('button', /Log in|Einloggen/)
   }
 
   /**

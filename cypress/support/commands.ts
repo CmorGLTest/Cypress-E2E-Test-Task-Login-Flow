@@ -1,3 +1,5 @@
+/// <reference types="cypress" />
+
 /**
  * Change the application language to English
  * Clicks on the language dropdown and selects "Englisch" (English)

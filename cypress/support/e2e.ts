@@ -1,3 +1,4 @@
+/// <reference types="cypress" />
 /**
  * Cypress E2E Support File
  * This file is loaded automatically before all test files run
@@ -18,13 +19,13 @@ declare global {
        * Change the application language to English
        * Handles language dropdown selection across all pages
        */
-      changeLanguageToEnglish(): Chainable<void>
+      changeLanguageToEnglish(): Chainable
 
       /**
        * Close welcome tour popups that appear on page initialization
        * Removes modal overlays and Shepherd tour elements
        */
-      closeWelcomeTourPopups(): Chainable<void>
+      closeWelcomeTourPopups(): Chainable
 
       /**
        * Custom login command with corrected form field selectors
@@ -32,7 +33,7 @@ declare global {
        * @param email - User email address
        * @param password - User password
        */
-      login(email: string, password: string): Chainable<void>
+      login(email: string, password: string): Chainable
     }
   }
 }

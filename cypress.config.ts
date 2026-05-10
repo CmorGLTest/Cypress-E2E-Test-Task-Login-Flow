@@ -37,9 +37,9 @@ export default defineConfig({
   },
 
   /**
-   * Security configuration
-   * Allows Cypress to access environment variables from code
-   * Set to false for production environments
+   * Explicitly disable Cypress.env() access from browser code.
+   * This removes the allowCypressEnv warning and prevents insecure exposure
+   * of environment values to application runtime.
    */
-  allowCypressEnv: true
+  allowCypressEnv: false
 })
